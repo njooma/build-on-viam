@@ -542,3 +542,99 @@ See [viam-chess](https://github.com/erh/viam-chess) for a complete reference imp
 - `Makefile` - Build automation
 
 This project demonstrates all the patterns described in this guide.
+
+## Best Practices
+
+### Getting Started
+
+1. **Set up your development environment**
+   - Install the Viam CLI: `brew install viam`
+   - Set up your Viam organization and create a machine
+   - Clone your project repository
+   - Verify connectivity to your hardware
+
+2. **Understand the architecture**
+   - Review [Viam's architecture documentation](https://docs.viam.com/architecture/)
+   - Understand the relationship between machines, components, and services
+   - Familiarize yourself with the SDK you'll be using (Python, Go, TypeScript)
+
+3. **Start simple**
+   - Get a basic "hello world" working first
+   - Verify each component works individually before integrating
+   - Use the Viam app to test components before writing code
+
+### Development Practices
+
+**Use configuration over code.** Prefer configuring components in the Viam app over hardcoding in your application:
+
+```python
+# Good: Configure in Viam app, reference by name in code
+camera = robot.get_component("my-camera")
+
+# Avoid: Hardcoding configuration in application code
+camera = Camera(port="/dev/video0", resolution=(640, 480))
+```
+
+**Leverage modular resources.** When existing components don't meet your needs:
+- Check if a community module exists first
+- Build a modular resource rather than forking core code
+- Share your modules with the team
+
+**Handle disconnections gracefully.** Robots operate in the real world. Your code should handle network interruptions, hardware failures, and sensor noise:
+
+```python
+try:
+    reading = await sensor.get_readings()
+except Exception as e:
+    logger.warning(f"Sensor read failed: {e}")
+    # Implement fallback behavior
+```
+
+**Use data management.** Log sensor data to Viam's data management for debugging. Use data capture for ML training datasets. Review logs when debugging issues.
+
+### Team Collaboration
+
+**Daily standups** - Share what you accomplished, identify blockers early, coordinate on shared resources (hardware, machines).
+
+**Document as you go** - Don't leave documentation for the end. Update README as you make progress, record short demo videos of milestones, note any gotchas or non-obvious solutions.
+
+**Report issues** - When you hit platform issues:
+1. Document the issue clearly (steps to reproduce, expected vs actual)
+2. File a Jira ticket
+3. Bring critical blockers to triage sessions
+
+This is one of the program's primary value propositions—finding and fixing issues.
+
+### Demo Best Practices
+
+**Preparing for demos:**
+- Test your demo multiple times before presenting
+- Have a backup plan if hardware fails
+- Record a video backup of the demo working
+
+**During the demo:**
+- Start with context: what problem does this solve?
+- Show the working application, not just slides
+- Highlight which Viam capabilities you used
+- Be honest about challenges and learnings
+
+**After the demo:**
+- Share your code and configuration
+- Document lessons learned
+- Update your project backlog based on feedback
+
+### Common Pitfalls
+
+| Pitfall | Problem | Solution |
+|---------|---------|----------|
+| Scope Creep | Adding features before MVP is complete | Ruthlessly prioritize. Get something working first, then iterate. |
+| Hardware Tunnel Vision | Spending all time on hardware issues | Use simulation or working hardware when possible. Ask for help early. |
+| Working in Isolation | Not sharing progress or blockers | Post updates in your team channel. Attend standups. Ask questions. |
+| Not Using Platform Features | Building custom solutions for things Viam provides | Review documentation. Ask if there's a built-in way to do something. |
+
+### Resources
+
+- [Viam Documentation](https://docs.viam.com/)
+- [SDK References](https://docs.viam.com/sdks/)
+- [Example Projects](https://docs.viam.com/tutorials/)
+- Internal Slack: #build-on-viam
