@@ -8,6 +8,7 @@ This directory contains all projects for the Build on Viam program.
 |---------|--------|---------------------|-------------|
 | [Vino](vino.md) | Existing | Arm, gripper, **customer delivery** | Pour on demand, glass detection |
 | [Chess](chess.md) | Existing | Arm, vision, ML, **data pipeline** | Full game play, move execution |
+| [Salad Maker](salad-maker.md) | New | **Dual-arm**, vision, **customer delivery**, **multi-machine** | Single arm fixed recipe |
 | [Greenhouse](greenhouse.md) | New | Data, ML, **fleet**, **triggers** | Monitor + auto-water |
 | [Barista](barista.md) | Proposed | Arm, **customer delivery**, **fleet**, **triggers** | Espresso only |
 | [Inventory Tracker](inventory-tracker.md) | New | RFID, vision, **triggers**, **customer delivery** | Barcode checkout |
@@ -20,6 +21,7 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 
 | Project | Platform Coverage | Feasibility | Cool Factor | Assessment Score |
 |---------|------------------|-------------|-------------|------------------|
+| Salad Maker | 5 | 3 | 5 | **4.6** |
 | Greenhouse | 5 | 3 | 5 | **4.6** |
 | Barista | 5 | 3 | 5 | **4.5** |
 | Inventory Tracker | 5 | 4 | 4 | **4.3** |
@@ -31,6 +33,7 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 ## Project Categories
 
 ### Manipulation (Arm-based)
+- **Salad Maker** - Dual-arm salad assembly
 - **Vino** - Wine pouring and service
 - **Chess** - Chess piece manipulation
 - **Barista** - Coffee preparation
@@ -45,41 +48,42 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 
 ## Viam Capabilities by Project
 
-| Capability | Vino | Chess | GH | Bar | Inv | RR | Light |
-|------------|------|-------|-----|-----|-----|-----|-------|
-| Arm Control | x | x | | x | | | |
-| Gripper | x | x | | x | | | |
-| Vision/ML | x | x | x | x | x | | |
-| Navigation/SLAM | | | | | | x | |
-| Data Capture | x | x | x | x | x | x | x |
-| Remote Operation | x | x | x | x | x | x | x |
-| **Custom Module** | | | | | x | x | x |
-| **Triggers** | x | x | x | x | x | x | x |
-| **Data Pipeline** | | x | x | x | x | | |
-| **Scheduled Tasks** | x | | x | x | x | | x |
-| **Customer Delivery** | x | | | x | x | | |
-| **Fleet Management** | | | x | x | x | | x |
-| **Multi-machine** | | | x | | | | x |
-| **Monitoring/Alerting** | | | x | x | x | | x |
+| Capability | Vino | Chess | Salad | GH | Bar | Inv | RR | Light |
+|------------|------|-------|-------|-----|-----|-----|-----|-------|
+| Arm Control | x | x | x | | x | | | |
+| Gripper | x | x | x | | x | | | |
+| Vision/ML | x | x | x | x | x | x | | |
+| Navigation/SLAM | | | | | | | x | |
+| Data Capture | x | x | x | x | x | x | x | x |
+| Remote Operation | x | x | x | x | x | x | x | x |
+| **Custom Module** | | | | | | x | x | x |
+| **Triggers** | x | x | x | x | x | x | x | x |
+| **Data Pipeline** | | x | x | x | x | x | | |
+| **Scheduled Tasks** | x | | x | x | x | x | | x |
+| **Customer Delivery** | x | | x | | x | x | | |
+| **Fleet Management** | | | | x | x | x | | x |
+| **Multi-machine** | | | x | x | | | | x |
+| **Monitoring/Alerting** | | | x | x | x | x | | x |
 
-**Legend:** GH=Greenhouse, Bar=Barista, Inv=Inventory Tracker, RR=Retro Roomba, Light=Smart Lighting
+**Legend:** Salad=Salad Maker, GH=Greenhouse, Bar=Barista, Inv=Inventory Tracker, RR=Retro Roomba, Light=Smart Lighting
 
 ## Gap Feature Coverage
 
 | Gap Feature | Primary Projects | Secondary Projects |
 |-------------|------------------|-------------------|
-| **Triggers** | Inventory Tracker, Smart Lighting | Greenhouse, Barista |
-| **Scheduled Tasks** | Smart Lighting, Inventory Tracker | Greenhouse, Barista |
-| **Customer Delivery** | Inventory Tracker, Vino | Barista |
-| **Data Pipeline** | Chess, Greenhouse | Inventory Tracker, Barista |
+| **Triggers** | Inventory Tracker, Smart Lighting | Greenhouse, Salad Maker, Barista |
+| **Scheduled Tasks** | Smart Lighting, Inventory Tracker | Greenhouse, Salad Maker, Barista |
+| **Customer Delivery** | Inventory Tracker, Vino, Salad Maker | Barista |
+| **Data Pipeline** | Chess, Greenhouse, Salad Maker | Inventory Tracker, Barista |
 | **Fleet Management** | Greenhouse, Smart Lighting | Barista, Inventory Tracker |
-| **Multi-machine Coordination** | Smart Lighting | Greenhouse |
+| **Multi-machine Coordination** | Salad Maker, Smart Lighting | Greenhouse |
 | **Custom Module Development** | Retro Roomba, Smart Lighting | Inventory Tracker |
 
 ## Cost Comparison
 
 | Project | Hardware Cost | Arm Required | Remote-Friendly |
 |---------|--------------|--------------|-----------------|
+| Salad Maker | $$$$$$ | Yes (2x) | Partial |
 | Vino | $$$$$ | Yes | Partial |
 | Chess | $$$$$ | Yes | Partial |
 | Barista | $$$$$ | Yes | Partial |
@@ -123,7 +127,7 @@ Current build configuration for 50 engineers:
 |---------|--------|-----------|-----------------|
 | Vino | 4 | 5 | 20 |
 | Chess | 2 | 5 | 10 |
-| Greenhouse | 1 | 5 | 5 |
+| Salad Maker | 1 | 5 | 5 |
 | Inventory Tracker | 1 | 5 | 5 |
 | Smart Lighting | 1 | 5 | 5 |
 | Retro Roomba | 1 | 5 | 5 |
