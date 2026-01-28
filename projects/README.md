@@ -149,6 +149,39 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 | UFACTORY 850 | Barista | 1 | 2 | 2 |
 | **Total** | | | | **16** |
 
+### Inventory & Procurement
+
+**Current inventory** (existing builds + stock):
+- Vino: 3 complete builds (arms, grippers, cameras)
+- Chess: 1 complete build (arms, grippers, cameras)
+- xArm 6: 4 additional in stock
+
+| Component | Need | In Stock | To Order |
+|-----------|------|----------|----------|
+| **Arms** | | | |
+| xArm 6 | 8 | 10 | 0 ✓ (surplus 2) |
+| xArm 7 | 2 | 1 | **1** |
+| UFACTORY 850 | 6 | 0 | **6** |
+| **Grippers** | | | |
+| xArm Gripper G2 | 16 | 7 | **9** |
+| Tongs extension | 4 | 0 | **4** |
+| **Compute** | | | |
+| System76 Meerkat | 10 | 4 | **6** |
+| Raspberry Pi 5 | 12 | TBD | TBD |
+| **Cameras** | | | |
+| Intel RealSense D435 | 16 | 7 | **9** |
+| Webcam | 16 | 3 | **13** |
+| **Bases** | | | |
+| Roomba 500/600 | 2 | TBD | TBD |
+| **Barista Equipment** | | | |
+| Eureka Atom grinder | 2 | 0 | **2** |
+| Puqpress Q2 | 2 | 0 | **2** |
+| Gaggia Classic Pro | 2 | 0 | **2** |
+| **Other** | | | |
+| Lutron Smart Bridge PRO | 4 | TBD | TBD |
+| RFID reader | 2 | TBD | TBD |
+| Tablet | 3 | TBD | TBD |
+
 ## Cost Comparison
 
 | Project | Hardware Cost | Arm Required | Remote-Friendly |
