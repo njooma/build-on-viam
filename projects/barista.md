@@ -41,7 +41,7 @@ This project combines manipulation complexity (multi-step beverage preparation),
 | Gripper | Portafilter/pitcher handling | UFACTORY Gripper |
 | Auto-tamper | Consistent 30lb tamp pressure | Puqpress Q2 (~$900) |
 | Espresso Machine | Semi-automatic | Rancilio Silvia Pro X or Gaggia Classic Pro |
-| Grinder | On-demand grinding | Eureka Mignon Specialita (~$500) |
+| Grinder | Portafilter-activated | Eureka Atom (~$1,100) |
 | Wrist Camera | Close-up detection | Intel RealSense D405 |
 | Overview Camera | Workspace monitoring | USB webcam |
 | Tablet | Order interface | Android tablet |
@@ -50,11 +50,11 @@ This project combines manipulation complexity (multi-step beverage preparation),
 | Milk Pitcher | Steaming vessel | Standard 12oz pitcher |
 | Compute | Main controller | System76 Meerkat |
 
-**Estimated Hardware Cost:** $12,000-15,000
+**Estimated Hardware Cost:** $13,000-16,000
 - UFACTORY 850: ~$8,000
+- Eureka Atom grinder: ~$1,100
 - Puqpress Q2: ~$900
 - Espresso machine: ~$1,500
-- Grinder: ~$500
 - System76 Meerkat: ~$800
 - Cameras, tablet, accessories: ~$500
 
@@ -203,8 +203,8 @@ Select 3-5 items for post-hackathon development:
 2. PREPARE PORTAFILTER
    ├── Grab portafilter from holder
    ├── Move to grinder
-   ├── Hold under grinder spout
-   └── Activate grinder (button press or timed)
+   ├── Push portafilter against fork (auto-activates grind)
+   └── Hold until dose complete
 
 3. TAMP
    ├── Move to Puqpress
@@ -262,9 +262,18 @@ Select 3-5 items for post-hackathon development:
 | Task | Challenge | Solution |
 |------|-----------|----------|
 | Portafilter lock-in | Requires twist motion under spring pressure | Compliant motion, force feedback |
-| Grinder activation | Button press while holding portafilter | Two-stage: position, then press |
+| Grinder activation | None - portafilter-activated | Push against fork, auto-grinds |
+| Tamping | None - auto-tamps | Place on Puqpress, auto-tamps |
 | Steam wand positioning | Hold steady during steaming | Fixed wand angle, move pitcher |
 | Puck knockback | Firm tap required | Controlled velocity impact |
+
+### Buttonless Workflow
+
+Both the Eureka Atom grinder and Puqpress Q2 are sensor-activated:
+- **Grinder:** Portafilter fork switch triggers grinding when pressed
+- **Tamper:** Sensor detects portafilter placement, auto-tamps in 1.3 sec
+
+The only button the robot needs to press is the **espresso machine brew button**.
 
 ### Espresso Machine Options
 
@@ -281,6 +290,8 @@ Select 3-5 items for post-hackathon development:
 
 - [Rozum Cafe](https://cafe.rozum.com/) - Commercial robotic barista (~$100k)
 - [Cafe X](https://www.cafexapp.com/) - Single-arm robotic coffee bar
+- [Artly Coffee](https://artly.coffee/) - AI-trained robotic barista
+- [Eureka Atom](https://www.eureka.co.it/en/products/espresso_line_home/atom.aspx) - Portafilter-activated grinder
 - [Puqpress Q2](https://puq.coffee/) - Automatic tamper with 22-66lb adjustable pressure
 - [Gaggia Classic Pi Mods](https://github.com/esrice/piggia) - Open source Pi control
 
