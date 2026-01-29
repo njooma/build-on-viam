@@ -1,211 +1,115 @@
-# Build on Viam Projects
+# Build on Viam Program
 
-This directory contains all projects for the Build on Viam program.
+## Program Overview
 
-## Active Projects
+Build on Viam is an internal program where Viam engineers build real robotics projects using the Viam platform. These projects serve multiple purposes: they demonstrate Viam's capabilities to customers and visitors, provide reference implementations for common robotics patterns, surface platform issues through real-world usage, and give engineers hands-on experience with the full development lifecycle.
 
-| Project | Status | Primary Capabilities | MVP Options |
-|---------|--------|---------------------|-------------|
-| [Vino](vino.md) | Existing | Arm, gripper, **customer delivery** | Pour on demand, glass detection |
-| [Chess](chess.md) | Existing | Arm, vision, ML, **data pipeline** | Full game play, move execution |
-| [Salad Maker](salad-maker.md) | New | **Dual-arm**, vision, **customer delivery**, **multi-machine** | Single arm fixed recipe |
-| [Greenhouse](greenhouse.md) | New | Data, ML, **fleet**, **event-driven automation** | Monitor + auto-water |
-| [Barista](barista.md) | New | Arm, **customer delivery**, **fleet**, **event-driven automation** | Espresso only |
-| [Inventory Tracker](inventory-tracker.md) | New | RFID, vision, **event-driven automation**, **customer delivery** | Barcode checkout |
-| [Retro Roomba](retro-roomba.md) | New | **Custom module**, protocol, SLAM | Basic drive control |
-| [Smart Lighting](smart-lighting.md) | New | IoT, **event-driven automation**, **multi-machine**, **scheduled tasks** | Basic control + scenes |
+## Projects
 
-See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box Bot
+| Project | Summary |
+|---------|---------|
+| [Barista](./barista.md) | Single-arm robot that operates an espresso station like a human barista |
+| [Chess](./chess.md) | Robot that plays chess against humans, physically moving pieces on a real board |
+| [Greenhouse](./greenhouse.md) | Automated growing environment with sensing, environmental control, and growth tracking |
+| [Inventory Tracker](./inventory-tracker.md) | Track lab equipment with zero-tagging vision - just hold up an item and go
+| [Retro Roomba](./retro-roomba.md) | Bring a Roomba 650/655 into the Viam ecosystem with a custom driver module and new capabilities |
+| [Salad Maker](./salad-maker.md) | Dual-arm robot that assembles custom salads from a refrigerated prep station |
+| [Smart Lighting](./smart-lighting.md) | Intelligent lighting that responds to occupancy, daylight, and schedules |
+| [Vino](./vino.md) | Wine service robot that pours and serves wine on demand |
 
-## Project Comparison
+## Viam Platform Capabilities
 
-| Project | Platform Coverage | Feasibility | Cool Factor | Assessment Score |
-|---------|------------------|-------------|-------------|------------------|
-| Salad Maker | 5 | 3 | 5 | **4.6** |
-| Greenhouse | 5 | 3 | 5 | **4.6** |
-| Barista | 5 | 3 | 5 | **4.5** |
-| Inventory Tracker | 5 | 4 | 4 | **4.3** |
-| Smart Lighting | 4 | 4 | 4 | **4.2** |
-| Vino | 4 | 4 | 5 | **4.0** |
-| Chess | 4 | 4 | 5 | **4.0** |
-| Retro Roomba | 4 | 4 | 4 | **4.0** |
+These are the Viam capabilities we want to exercise throughout this program.
 
-## Project Categories
+### Core Capabilities
 
-### Manipulation (Arm-based)
-- **Salad Maker** - Dual-arm salad assembly
-- **Vino** - Wine pouring and service
-- **Chess** - Chess piece manipulation
-- **Barista** - Coffee preparation
+| Capability | Description |
+|------------|-------------|
+| **Hardware Integration** | Consistent APIs across cameras, arms, motors, sensors |
+| **Motion Planning** | Arm movement, obstacle avoidance, frame system |
+| **Vision / ML Inference** | Object detection, classification, custom models |
+| **Data Capture & Sync** | Edge-to-cloud data pipelines with offline resilience |
+| **Remote Operation** | Control and monitor robots through firewalls |
+| **Module Development** | Custom components and services via Registry |
+| **Fragments** | Reusable configuration blocks |
 
-### Mobile/Navigation
-- **Retro Roomba** - Legacy Roomba with custom driver
+### Scale & Fleet Capabilities
 
-### IoT/Sensing
-- **Greenhouse** - Environmental monitoring and control
-- **Inventory Tracker** - RFID/vision asset tracking
-- **Smart Lighting** - Lutron integration, cross-machine event-driven automation
+| Capability | Description |
+|------------|-------------|
+| **Fleet Management** | Managing multiple machines with shared configs |
+| **OTA Updates** | Deploying module and model updates to fleet |
+| **Provisioning** | Using fragments to reuse machine config across a fleet |
 
-## Viam Capabilities by Project
+### Operational Capabilities
 
-| Capability | Vino | Chess | Salad | GH | Bar | Inv | RR | Light |
-|------------|------|-------|-------|-----|-----|-----|-----|-------|
-| Arm Control | x | x | x | | x | | | |
-| Gripper | x | x | x | | x | | | |
-| Vision/ML | x | x | x | x | x | x | | |
-| Navigation/SLAM | | | | | | | x | |
-| Data Capture | x | x | x | x | x | x | x | x |
-| Remote Operation | x | x | x | x | x | x | x | x |
-| **Custom Module** | | | | | | x | x | x |
-| **Event-Driven Automation** | x | x | x | x | x | x | x | x |
-| **Data Pipeline** | | x | x | x | x | x | | |
-| **Scheduled Tasks** | x | | x | x | x | x | | x |
-| **Customer Delivery** | x | | x | | x | x | | |
-| **Fleet Management** | | | | x | x | x | | x |
-| **Multi-machine** | | | x | x | | | | x |
-| **Monitoring/Alerting** | | | x | x | x | x | | x |
+| Capability | Description |
+|------------|-------------|
+| **Scheduled Tasks** | Periodic operations without custom schedulers |
+| **Monitoring & Alerting** | Fleet health visibility and notifications |
+| **Data Pipeline (ML Training)** | Capture → Label → Train → Deploy workflow |
 
-**Legend:** Salad=Salad Maker, GH=Greenhouse, Bar=Barista, Inv=Inventory Tracker, RR=Retro Roomba, Light=Smart Lighting
+### Customer-Facing Capabilities
 
-## Gap Feature Coverage
+| Capability | Description |
+|------------|-------------|
+| **Customer Delivery** | White-label auth, TypeScript/Flutter SDKs, billing |
+| **Web/Mobile Apps** | Customer-facing interfaces using Viam SDKs |
 
-| Gap Feature | Primary Projects | Secondary Projects |
-|-------------|------------------|-------------------|
-| **Event-Driven Automation** | Inventory Tracker, Smart Lighting | Greenhouse, Salad Maker, Barista |
-| **Scheduled Tasks** | Smart Lighting, Inventory Tracker | Greenhouse, Salad Maker, Barista |
-| **Customer Delivery** | Inventory Tracker, Vino, Salad Maker | Barista |
-| **Data Pipeline** | Chess, Greenhouse, Salad Maker | Inventory Tracker, Barista |
-| **Fleet Management** | Greenhouse, Smart Lighting | Barista, Inventory Tracker |
-| **Multi-machine Coordination** | Salad Maker, Smart Lighting | Greenhouse |
-| **Custom Module Development** | Retro Roomba, Smart Lighting | Inventory Tracker |
+## Current Feature Coverage
 
-## Hardware Requirements by Build
+As of the current project portfolio, here's how capabilities are covered:
 
-### Arm-Based Projects
+**Projects:** Chess, Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Retro Roomba, Smart Lighting
 
-| Build | Arm | Gripper | Compute | Cameras | Other |
-|-------|-----|---------|---------|---------|-------|
-| Vino 1 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
-| Vino 2 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
-| Vino 3 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
-| Chess 1 | xArm 7 (1) | xArm Gripper G2 (1) | Meerkat (1) | D435 wrist (1) | Board (1), pieces (1) |
-| Chess 2 | xArm 7 (1) | xArm Gripper G2 (1) | Meerkat (1) | D435 wrist (1) | Board (1), pieces (1) |
-| Salad 1 | UFACTORY 850 (2) | xArm Gripper G2 + tongs (2) | Meerkat (1) | D435 wrist (2), webcam overview (1) | Prep station (1), dispenser (1) |
-| Salad 2 | UFACTORY 850 (2) | xArm Gripper G2 + tongs (2) | Meerkat (1) | D435 wrist (2), webcam overview (1) | Prep station (1), dispenser (1) |
-| Barista 1 | UFACTORY 850 (1) | xArm Gripper G2 (1) | Meerkat (1) | D435 wrist (1), webcam overview (1) | Eureka Atom (1), Puqpress Q2 (1), Gaggia (1), tablet (1), Viam mugs |
-| Barista 2 | UFACTORY 850 (1) | xArm Gripper G2 (1) | Meerkat (1) | D435 wrist (1), webcam overview (1) | Eureka Atom (1), Puqpress Q2 (1), Gaggia (1), tablet (1), Viam mugs |
+| Capability | Projects |
+|------------|----------|
+| Hardware Integration | All projects |
+| Motion Planning | Chess, Vino, Salad Maker, Barista |
+| Vision / ML Inference | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Greenhouse |
+| Data Capture & Sync | All projects |
+| Remote Operation | All projects |
+| Module Development | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Retro Roomba, Smart Lighting |
+| Fragments | All projects |
+| Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
+| OTA Updates | All projects |
+| Provisioning | Greenhouse, Barista, Inventory Tracker, Smart Lighting, Cleaning Cart |
+| Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
+| Monitoring & Alerting | Vino, Greenhouse, Barista |
+| Data Pipeline (ML Training) | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker |
+| Customer Delivery | Vino, Salad Maker, Barista, Inventory Tracker |
+| Web/Mobile Apps | Vino, Salad Maker, Barista, Inventory Tracker |
 
-### IoT/Sensing Projects
 
-| Build | Compute | Cameras | Sensors | Other |
-|-------|---------|---------|---------|-------|
-| Greenhouse 1 | TBD | TBD | TBD | TBD |
-| Inventory 1 | Pi 5 (6) | webcam (6) | RFID reader (2) | RFID tags, tablet kiosk (1) |
-| Lighting 1 | Pi 5 (4) | — | BH1750 light (4) | Lutron Bridge PRO (4) |
+## Proposing New Projects
 
-### Mobile Projects
+When proposing a new project, consider:
 
-| Build | Compute | Cameras | Sensors | Base | Other |
-|-------|---------|---------|---------|------|-------|
-| Roomba 1 | Pi 5 (1) | webcam (1) | (internal) | Roomba 500/600 (1) | Serial adapter (1), IR beacons |
-| Roomba 2 | Pi 5 (1) | webcam (1) | (internal) | Roomba 500/600 (1) | Serial adapter (1), IR beacons |
+### 1. Feature Coverage
 
-### Inventory & Procurement
+- Does this project demonstrate a broad set of Viam capabilities?
+- Does it emphasize any capability not well covered by other projects?
 
-**Current inventory** (existing builds + stock):
-- Vino: 3 complete builds (arms, grippers, cameras)
-- Chess: 1 complete build (arms, grippers, cameras)
-- xArm 6: 4 additional in stock
+### 2. Demo Appeal
 
-| Component | Need | In Stock | To Order |
-|-----------|------|----------|----------|
-| **Arms** | | | |
-| xArm 6 | 6 | 10 | 0 ✓ (surplus 4) |
-| xArm 7 | 2 | 1 | **1** |
-| UFACTORY 850 | 6 | 0 | **6** |
-| **Grippers** | | | |
-| xArm Gripper G2 | 14 | 7 | **7** |
-| Tongs extension | 4 | 0 | **4** |
-| **Compute** | | | |
-| System76 Meerkat | 9 | 4 | **5** |
-| Raspberry Pi 5 | 12 | TBD | TBD |
-| **Cameras** | | | |
-| Intel RealSense D435 | 14 | 7 | **7** |
-| Webcam | 15 | 3 | **12** |
-| **Bases** | | | |
-| Roomba 500/600 | 2 | TBD | TBD |
-| **Barista Equipment** | | | |
-| Eureka Atom grinder | 2 | 0 | **2** |
-| Puqpress Q2 | 2 | 0 | **2** |
-| Gaggia Classic Pro | 2 | 0 | **2** |
-| **Other** | | | |
-| Lutron Smart Bridge PRO | 4 | TBD | TBD |
-| RFID reader | 2 | TBD | TBD |
-| Tablet | 3 | TBD | TBD |
+- Would visitors/customers be impressed?
+- Is there a clear "wow" moment?
 
-## Project Comparison
+### 3. Feasibility
 
-| Project | Arm Required | Remote-Friendly |
-|---------|--------------|-----------------|
-| Salad Maker | Yes (2x UFACTORY 850) | Partial |
-| Barista | Yes (UFACTORY 850) | Partial |
-| Vino | Yes (xArm 6) | Partial |
-| Chess | Yes (xArm 7) | Partial |
-| Greenhouse | No | Yes |
-| Inventory Tracker | No | Yes |
-| Smart Lighting | No | Yes |
-| Retro Roomba | No | Partial |
+- What are the hardware needs?
+- What is the MVP for the hackathon?
+- Is the MVP achievable in hackathon timeframe?
 
-## Cross-Project Integration
+### 4. Lifecycle Coverage
 
-Several projects can work together:
+- Does this project exercise multiple lifecycle stages?
+- Prototype → Deploy → Scale → Fleet → Maintain
 
-| Integration | Projects | Description |
-|-------------|----------|-------------|
-| **Lights follow rover** | Smart Lighting + Retro Roomba | Lights activate when rover enters zone |
-| **Checkout activates lights** | Inventory Tracker + Smart Lighting | Lab lights on when equipment checked out |
-| **Robot fleet dashboard** | All mobile robots | Centralized monitoring of all rovers |
+### 5. Longevity
 
-## Reference Documents
+- Is there a well-defined backlog of work that will extend beyond the hackathon?
+- Can this project be maintained long-term?
+- Will someone own it after the hackathon?
 
-- [Project Assessment Criteria](../docs/project-assessment-criteria.md) - How projects are evaluated
-- [Project Template](../templates/project-template.md) - Template for new projects
-- [Submission Guidelines](../docs/submission-guidelines.md) - How to propose new projects
-
-## Selecting a Project
-
-During the hackathon kickoff, engineers will select which project to join. Consider:
-
-- Which capabilities do you want to learn?
-- What hardware is available to you?
-- Which team members do you want to collaborate with?
-- Do you prefer manipulation, navigation, or IoT projects?
-
-**Requirement:** Every engineer must join a project team.
-
-## Team Sizes
-
-Current build configuration:
-
-| Project | Builds | Team Size | Total Engineers |
-|---------|--------|-----------|-----------------|
-| Vino | 3 | 5 | 15 |
-| Chess | 2 | 5 | 10 |
-| Salad Maker | 2 | 5 | 10 |
-| Barista | 2 | 5 | 10 |
-| Greenhouse | 1 | 5 | 5 |
-| Inventory Tracker | 1 | 5 | 5 |
-| Smart Lighting | 1 | 5 | 5 |
-| Retro Roomba | 2 | 5 | 10 |
-| **Total** | **14** | | **70** |
-
-**Note:** Adjust based on interest and hardware availability.
-
-## Next Steps
-
-For each project:
-1. [ ] Select MVP option
-2. [ ] Select 3-5 backlog items
-3. [ ] Confirm hardware availability
-4. [ ] Assign project lead
-5. [ ] Create Jira epic
+If you have a project you'd like to propose, write it up following the template used by the projects already defined and submit as a pull request to this repo.
