@@ -25,12 +25,12 @@ These are the capabilities we want to demonstrate across our project portfolio:
 | **Data Capture & Sync** | Edge-to-cloud data pipelines with offline resilience |
 | **Remote Operation** | Control and monitor robots through firewalls |
 | **Module Development** | Custom components and services via Registry |
+| **Fragments** | Reusable configuration blocks for fleet management |
 
 ### Scale & Fleet Capabilities
 
 | Capability | Description |
 |------------|-------------|
-| **Fragments** | Reusable configuration blocks for fleet management |
 | **Fleet Management** | Managing multiple machines with shared configs |
 | **OTA Updates** | Deploying module and model updates to fleet |
 | **Provisioning** | Automatic setup of new machines |
