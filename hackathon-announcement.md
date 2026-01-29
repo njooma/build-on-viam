@@ -8,16 +8,9 @@ Deep platform familiarity isn't optional — it's what enables us to work faster
 
 ## The Projects
 
-The program is built around a set of well-defined robotics applications that we'll develop over the coming months, starting with a hackathon kickoff. Each project has clear goals, exercises key Viam capabilities, and has a well-defined backlog that extends beyond the hackathon:
+The program is built around a set of well-defined robotics applications that we'll develop over the coming months, starting with a hackathon kickoff. Each project has clear goals, exercises key Viam capabilities, and has a well-defined backlog that extends beyond the hackathon. Browse the full list of projects here:
 
-- **Barista** — Single-arm robot that operates an espresso station like a human barista
-- **Chess** — Robot that plays chess against humans, physically moving pieces on a real board
-- **Greenhouse** — Automated growing environment with sensing, environmental control, and growth tracking
-- **Inventory Tracker** — Track lab equipment with zero-tagging vision
-- **Retro Roomba** — Bring a Roomba 650/655 into the Viam ecosystem with a custom driver module
-- **Salad Maker** — Dual-arm robot that assembles custom salads from a refrigerated prep station
-- **Smart Lighting** — Intelligent lighting that responds to occupancy, daylight, and schedules
-- **Vino** — Wine service robot that pours and serves wine on demand
+https://github.com/shannonbradshaw/build-on-viam/tree/main/projects
 
 We welcome additional project proposals — more on that below.
 
