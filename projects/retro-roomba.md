@@ -2,7 +2,7 @@
 
 ## Overview
 
-**One-line description:** Bring a 2005-era Roomba into the Viam ecosystem with custom drivers and DIY IR beacons
+**One-line description:** Bring a Roomba 650/655 into the Viam ecosystem with a custom driver module
 
 **Project Lead:** TBD
 **Team Members:** TBD
@@ -10,39 +10,35 @@
 
 ## Description
 
-Retro Roomba Revival takes a cheap, old Roomba (500/600 series, ~$30 on eBay) and integrates it with Viam by building a custom driver module. Engineers implement the Roomba Open Interface protocol, handle serial communication, and create DIY IR beacons for navigation. Optional upgrades include adding a camera and LiDAR for modern SLAM capabilities.
-
-This project teaches WHY Viam's abstractions exist by making engineers build them from scratch. It's the deepest hardware integration learning experience in the portfolio.
+Retro Roomba Revival takes a Roomba 650/655 and integrates it with Viam by building a custom driver module. Engineers implement the Roomba Open Interface protocol and handle serial communication. The project deliberately avoids computer vision to focus on core module development and hardware integration fundamentals.
 
 ## Viam Capabilities Demonstrated
 
-- [x] Custom Module Development ← **Primary learning: build driver from scratch**
-- [x] Hardware Abstraction ← **Implement base, sensor, power_sensor APIs**
-- [x] Protocol Implementation ← **Roomba Open Interface serial protocol**
-- [x] Data Capture ← **Sensor logs, battery cycles, patrol data**
-- [x] Triggers ← **Low battery, dock needed, bump detected**
-- [x] Remote Operation
-- [ ] Fleet Management
-- [x] SLAM (with LiDAR upgrade) ← **Add modern nav to retro hardware**
-- [ ] Customer Delivery
-- [x] Modular Resources
+| Capability | Coverage | Notes |
+|------------|----------|-------|
+| Custom Module Development | Primary | Build driver from scratch |
+| Hardware Abstraction | Primary | Implement base, sensor, power_sensor, movement_sensor APIs |
+| Protocol Implementation | Primary | Roomba Open Interface serial protocol |
+| Data Capture & Sync | Strong | Sensor logs, battery cycles, patrol data |
+| Triggers | Strong | Low battery, dock needed, bump detected |
+| Remote Operation | Strong | Control through app and SDKs |
+| Fleet Management | Stretch | Multiple Roombas |
+| Fragments | Strong | Hardware fragment for Roomba setup |
+| Module Registry | Strong | Publish and version the driver |
+| SDK Development | Strong | Python, Go, TypeScript clients |
+| Customer Delivery | Stretch | Guest control interface |
+
+---
 
 ## Hardware Requirements
 
 | Component | Description | Options |
 |-----------|-------------|---------|
-| Roomba | 2005-2010 era base | 500 series (~$30), 600 series (~$40) |
+| Roomba | 600 series base | Roomba 650 or 655 |
 | Compute | Main controller | Raspberry Pi 5 |
 | Serial Adapter | Connect Pi to Roomba | Mini-DIN cable + logic level converter |
-| Camera | Vision (optional) | USB webcam |
-| LiDAR | SLAM upgrade (optional) | RPLidar A1 (~$100) |
-| IR LEDs | DIY beacons | 940nm IR LEDs |
-| Beacon Controller | DIY virtual walls | Arduino Nano or ATtiny85 |
 
-**Estimated Hardware Cost:**
-- Basic: ~$150 (Roomba + Pi + wiring)
-- With LiDAR: ~$290
-- With beacons: ~$50 additional
+**Estimated Hardware Cost:** ~$150 (Roomba + Pi + wiring)
 
 **Remote-Friendly:** Partially - protocol/module development remote, physical testing requires hardware
 
@@ -64,74 +60,301 @@ All Roomba sensors exposed through Viam.
 - **Demo Appeal:** Medium
 - **Scope:** Complete sensor implementation
 
-### Option C: DIY Beacons
-Build virtual walls and dock beacon.
-- **Complexity:** High
-- **Demo Appeal:** High
-- **Scope:** IR protocol reverse engineering, beacon builds
-
-### Option D: SLAM Upgrade
-Add LiDAR, implement modern navigation.
-- **Complexity:** High
-- **Demo Appeal:** Very High
-- **Scope:** Full modern capabilities on retro hardware
-
 **Selected MVP:** _______________
 
 ---
 
-## Backlog
+## Feature Backlog: Organized by Learning Objective
 
-Select 3-5 items for post-hackathon development:
+### Phase 1: Module Development Fundamentals
 
-### Protocol & Control
-- [ ] **Drive command** - SetVelocity, Stop, SetPower
-- [ ] **Sensor polling** - All Roomba sensor packets
-- [ ] **Safe mode** - Cliff/bump protection active
-- [ ] **Full mode** - No safety limits (for testing)
-- [ ] **Song playback** - Roomba beep patterns
+**Learning Goal:** Understand how Viam modules work, how to implement component APIs, and how the resource lifecycle operates.
 
-### Sensor Integration
-- [ ] **Bump sensors** - Left/right bump detection
-- [ ] **Cliff sensors** - Edge detection (4 sensors)
-- [ ] **Wheel encoders** - Odometry data
-- [ ] **Battery state** - Charge level, voltage, current
-- [ ] **IR receivers** - Detect virtual walls and dock
+#### 1.1 Basic Module Structure
+- [ ] **Create module scaffold** - main.go, meta.json, resource registration
+  - *Teaches:* Module entry points, resource registration pattern
+- [ ] **Implement base.Base interface** - SetVelocity, SetPower, Stop, IsMoving
+  - *Teaches:* Component API contracts, how Viam abstracts hardware
+- [ ] **Handle serial port configuration** - Configurable port, baud rate via attributes
+  - *Teaches:* Component configuration, Validate() pattern
+- [ ] **Implement Reconfigure()** - Handle config changes without restart
+  - *Teaches:* Dynamic reconfiguration, resource lifecycle
+- [ ] **Implement Close()** - Clean shutdown, release serial port
+  - *Teaches:* Resource cleanup, graceful shutdown
 
-### DIY Beacons
-- [ ] **Virtual wall** - IR transmitter blocks Roomba path
-- [ ] **Dock beacon** - Red/green buoy + force field signals
-- [ ] **Lighthouse** - Room-to-room navigation beacons
-- [ ] **Custom zones** - Define patrol areas with beacons
+#### 1.2 Multiple Component Types
+- [ ] **Implement sensor.Sensor** - Bump sensors as generic sensor
+  - *Teaches:* Sensor API, Readings() return format
+- [ ] **Implement power_sensor.PowerSensor** - Battery voltage, current, charge level
+  - *Teaches:* PowerSensor API, voltage/current/power readings
+- [ ] **Implement movement_sensor.MovementSensor** - Wheel encoders for odometry
+  - *Teaches:* MovementSensor API, position/orientation tracking
+- [ ] **Create composite component** - Single config creates all Roomba resources
+  - *Teaches:* Resource dependencies, module organization patterns
 
-### Vision & SLAM Upgrade
-- [ ] **Mount camera** - Top-mounted USB webcam
-- [ ] **Mount LiDAR** - RPLidar A1 on top
-- [ ] **Cartographer SLAM** - Map building with LiDAR
-- [ ] **Fused odometry** - Wheel encoders + LiDAR
-- [ ] **Autonomous navigation** - Navigate mapped space
+#### 1.3 Protocol Implementation
+- [ ] **Roomba OI initialization** - Start, Safe, Full mode commands
+  - *Teaches:* Serial communication, state machines
+- [ ] **Sensor packet parsing** - Decode binary sensor data
+  - *Teaches:* Binary protocols, byte manipulation in Go
+- [ ] **Command serialization** - Encode drive commands
+  - *Teaches:* Protocol encoding, endianness
+- [ ] **Error handling** - Serial timeouts, reconnection logic
+  - *Teaches:* Robust hardware communication, error recovery
 
-### Triggers
-- [ ] **Low battery** - Alert and return to dock
-- [ ] **Bump detected** - Log obstacle encounters
-- [ ] **Cliff detected** - Emergency stop, alert
-- [ ] **Dock signal lost** - Alert if beacon down
-
-### Data Capture
-- [ ] **Patrol logs** - Route taken, time, events
-- [ ] **Sensor data** - Continuous capture for analysis
-- [ ] **Battery cycles** - Track charge/discharge patterns
-- [ ] **Error events** - Stuck, bump, cliff occurrences
+#### 1.4 Testing Your Module
+- [ ] **Unit tests for protocol** - Test packet encoding/decoding
+  - *Teaches:* Testing hardware code without hardware
+- [ ] **Mock serial port** - Test module logic with fake Roomba
+  - *Teaches:* Dependency injection, testable design
+- [ ] **Integration test script** - Python SDK script to verify module
+  - *Teaches:* SDK usage, end-to-end testing
 
 ---
 
-## Stretch Goals
+### Phase 2: Configuration & Fragments
 
-- [ ] Voice control ("Roomba, clean the lab")
-- [ ] Multi-Roomba fleet
-- [ ] Integration with Smart Lighting (lights follow Roomba)
-- [ ] Custom cleaning patterns
-- [ ] ROS 2 bridge (for comparison)
+**Learning Goal:** Understand Viam's configuration architecture, how fragments enable reuse, and the two-layer config pattern.
+
+#### 2.1 Machine Configuration
+- [ ] **Create basic machine config** - Roomba module + components
+  - *Teaches:* Machine configuration structure, component dependencies
+- [ ] **Use attributes for hardware specifics** - Serial port, sensor polling rate
+  - *Teaches:* Attribute schema design, configuration flexibility
+- [ ] **Configure frame system** - Define Roomba's coordinate frame
+  - *Teaches:* Frame system, spatial relationships
+
+#### 2.2 Fragment Creation
+- [ ] **Extract hardware fragment** - Roomba base + sensors as reusable fragment
+  - *Teaches:* Fragment structure, what belongs in a fragment
+- [ ] **Add fragment variables** - Serial port, device name as variables
+  - *Teaches:* Fragment parameterization, machine-specific values
+- [ ] **Version the fragment** - Tag stable versions, maintain dev version
+  - *Teaches:* Fragment versioning strategy
+
+#### 2.3 Multi-Machine Configuration
+- [ ] **Deploy to second Roomba** - Same fragment, different variables
+  - *Teaches:* Fragment reuse, configuration scaling
+- [ ] **Use fragment mods** - Override specific settings per machine
+  - *Teaches:* Fragment customization, inheritance pattern
+- [ ] **Organize by location** - Different locations for different Roombas
+  - *Teaches:* Location hierarchy, organizational structure
+
+---
+
+### Phase 3: Remote Development & SDKs
+
+**Learning Goal:** Master Viam's development workflow and understand how to build applications using different SDKs.
+
+#### 3.1 CLI Development Pattern
+- [ ] **Run module locally against remote hardware** - Connect laptop to Pi-hosted Roomba
+  - *Teaches:* WebRTC connection, remote development workflow
+- [ ] **Iterate without deploy** - Edit code, rebuild, test immediately
+  - *Teaches:* Development velocity, why this pattern matters
+- [ ] **Debug with logs** - Use logger, view in app
+  - *Teaches:* Logging best practices, remote debugging
+
+#### 3.2 Python SDK
+- [ ] **Basic control script** - Connect, drive forward, read sensors
+  - *Teaches:* Python SDK patterns, async/await usage
+- [ ] **Patrol script** - Drive a pattern, avoid obstacles
+  - *Teaches:* Control loops, sensor-based decisions
+- [ ] **Data collection script** - Capture sensor data to files
+  - *Teaches:* SDK data access, offline analysis
+
+#### 3.3 Go SDK
+- [ ] **Control application in Go** - Same functionality as Python
+  - *Teaches:* Go SDK patterns, context usage
+- [ ] **Compare SDK ergonomics** - Document differences from Python
+  - *Teaches:* SDK design tradeoffs, language-specific patterns
+
+#### 3.4 TypeScript SDK
+- [ ] **Web control interface** - Browser-based Roomba control
+  - *Teaches:* TypeScript SDK, web application patterns
+- [ ] **Real-time sensor display** - Live sensor values in browser
+  - *Teaches:* Streaming data, WebSocket-like patterns
+- [ ] **Mobile-responsive design** - Control from phone browser
+  - *Teaches:* Practical UI considerations
+
+---
+
+### Phase 4: Data Management
+
+**Learning Goal:** Understand Viam's data capture, sync, and query capabilities.
+
+#### 4.1 Data Capture Configuration
+- [ ] **Enable sensor data capture** - Configure capture for all sensors
+  - *Teaches:* Data capture configuration, capture frequency tradeoffs
+- [ ] **Configure sync rules** - When and how data syncs to cloud
+  - *Teaches:* Sync configuration, bandwidth management
+
+#### 4.2 Working with Captured Data
+- [ ] **View data in app** - Browse captured sensor data
+  - *Teaches:* Data visualization in Viam app
+- [ ] **Query data via CLI** - Use viam data commands
+  - *Teaches:* CLI data access, filtering and export
+- [ ] **Query data via SDK** - Programmatic data access
+  - *Teaches:* Data client SDK, building analytics
+
+#### 4.3 Data Analysis
+- [ ] **Battery degradation tracking** - Analyze charge cycles over time
+  - *Teaches:* Time-series analysis, predictive insights
+- [ ] **Patrol efficiency metrics** - Analyze coverage patterns
+  - *Teaches:* Operational analytics, optimization
+- [ ] **Error pattern analysis** - Correlate bumps, cliffs, stuck events
+  - *Teaches:* Anomaly detection, reliability analysis
+
+---
+
+### Phase 5: Triggers & Automation
+
+**Learning Goal:** Understand event-driven automation in Viam.
+
+#### 5.1 Basic Triggers
+- [ ] **Low battery trigger** - Alert when battery below threshold
+  - *Teaches:* Trigger configuration, threshold-based events
+- [ ] **Bump detected trigger** - Log and alert on collisions
+  - *Teaches:* Event-based triggers, immediate response
+- [ ] **Cliff detected trigger** - Emergency alert on cliff detection
+  - *Teaches:* Safety-critical triggers
+
+#### 5.2 Trigger Actions
+- [ ] **Webhook notification** - Send to Slack/Discord on events
+  - *Teaches:* Webhook integration, external notifications
+- [ ] **Email alerts** - Send email on critical events
+  - *Teaches:* Email action configuration
+- [ ] **Data capture on trigger** - Capture extra data when event occurs
+  - *Teaches:* Conditional data capture
+
+#### 5.3 Complex Automation
+- [ ] **Return to dock on low battery** - Trigger initiates dock sequence
+  - *Teaches:* Trigger-initiated actions, state management
+- [ ] **Scheduled patrol** - Clean at specific times
+  - *Teaches:* Scheduled triggers, cron-like functionality
+- [ ] **Conditional logic** - Only clean if motion not detected recently
+  - *Teaches:* Complex trigger conditions
+
+---
+
+### Phase 6: Services
+
+**Learning Goal:** Understand Viam's built-in services and when to use them.
+
+#### 6.1 Motion Service
+- [ ] **Configure motion service** - Even for base-only robot
+  - *Teaches:* Motion service scope, when it applies
+- [ ] **Understand frame system** - How motion service uses frames
+  - *Teaches:* Frame relationships, transforms
+
+---
+
+### Phase 7: Module Publishing & Registry
+
+**Learning Goal:** Understand how to share modules and manage versions.
+
+#### 7.1 Prepare for Publishing
+- [ ] **Write comprehensive README** - Installation, configuration, usage
+  - *Teaches:* Documentation standards
+- [ ] **Define meta.json completely** - All fields, entry point, models
+  - *Teaches:* Module metadata requirements
+- [ ] **Add example configurations** - Sample machine configs
+  - *Teaches:* User onboarding, examples
+
+#### 7.2 Publishing
+- [ ] **Publish to registry (private)** - Internal use first
+  - *Teaches:* Publishing workflow, visibility settings
+- [ ] **Version management** - Semantic versioning, changelog
+  - *Teaches:* Version strategy, breaking changes
+- [ ] **Publish publicly** - Share with community
+  - *Teaches:* Public module considerations
+
+#### 7.3 Updates & Maintenance
+- [ ] **Release update** - Fix bug, publish new version
+  - *Teaches:* Update workflow
+- [ ] **OTA update to fleet** - Update all Roombas to new version
+  - *Teaches:* Fleet updates, rollout strategy
+- [ ] **Rollback** - Revert to previous version if issues
+  - *Teaches:* Rollback procedures, safety
+
+---
+
+### Phase 8: Fleet Management
+
+**Learning Goal:** Understand how Viam scales to multiple machines.
+
+#### 8.1 Multi-Robot Setup
+- [ ] **Deploy second Roomba** - Same module, new machine
+  - *Teaches:* Machine provisioning, fragment reuse
+- [ ] **Unique naming** - Consistent naming across fleet
+  - *Teaches:* Fleet organization, naming conventions
+- [ ] **Location organization** - Group by physical location
+  - *Teaches:* Location hierarchy
+
+#### 8.2 Fleet Operations
+- [ ] **Fleet dashboard** - View all Roombas in one place
+  - *Teaches:* Fleet visibility, monitoring
+- [ ] **Bulk configuration** - Update fragment, propagate to all
+  - *Teaches:* Configuration at scale
+- [ ] **Fleet-wide data query** - Aggregate data across robots
+  - *Teaches:* Cross-machine analytics
+
+#### 8.3 Provisioning
+- [ ] **Provisioning flow** - Add new Roomba with minimal steps
+  - *Teaches:* Provisioning workflow
+- [ ] **Viam agent** - Auto-setup with agent
+  - *Teaches:* Agent-based provisioning
+
+---
+
+### Phase 9: Customer-Facing Features
+
+**Learning Goal:** Understand how to build end-user experiences with Viam.
+
+#### 9.1 Custom Web Application
+- [ ] **Build control app** - Custom web UI for Roomba control
+  - *Teaches:* TypeScript SDK in production app
+- [ ] **User authentication** - Login to control Roomba
+  - *Teaches:* Auth integration, API keys
+- [ ] **Permission scoping** - Limit what users can do
+  - *Teaches:* Operator permissions, security
+
+#### 9.2 Mobile Application
+- [ ] **Flutter app skeleton** - Basic mobile app structure
+  - *Teaches:* Flutter SDK usage
+- [ ] **Control interface** - Drive Roomba from phone
+  - *Teaches:* Mobile control patterns
+- [ ] **Push notifications** - Alert when cleaning done
+  - *Teaches:* Mobile notification integration
+
+#### 9.3 Voice Control
+- [ ] **Voice command integration** - "Roomba, clean the lab"
+  - *Teaches:* Voice assistant integration patterns
+- [ ] **Natural language mapping** - Map commands to actions
+  - *Teaches:* Intent mapping, UX design
+
+---
+
+### Phase 10: Advanced Integration
+
+**Learning Goal:** Complex multi-system integration.
+
+#### 11.1 Integration with Other Projects
+- [ ] **Smart Lighting integration** - Lights follow Roomba
+  - *Teaches:* Cross-project integration, event coordination
+- [ ] **Inventory Tracker integration** - Roomba reports floor items
+  - *Teaches:* Data sharing between systems
+
+#### 11.2 External System Integration
+- [ ] **Home Assistant integration** - Expose Roomba to HA
+  - *Teaches:* External API integration
+- [ ] **Calendar integration** - Clean based on calendar events
+  - *Teaches:* External data sources
+
+#### 11.3 Multi-Robot Coordination
+- [ ] **Zone assignment** - Multiple Roombas divide space
+  - *Teaches:* Multi-robot coordination
+- [ ] **Collision avoidance** - Roombas avoid each other
+  - *Teaches:* Inter-robot communication
 
 ---
 
@@ -143,23 +366,43 @@ Select 3-5 items for post-hackathon development:
 - [ ] Bump sensors trigger stops
 - [ ] Module published to registry (private)
 
-**Project Complete When:**
-- [ ] All sensors exposed through Viam
-- [ ] DIY virtual wall beacon working
-- [ ] DIY dock beacon working (Roomba finds and docks)
-- [ ] Camera mounted and streaming
-- [ ] SLAM working with LiDAR
+**Phase 1 Complete When:**
+- [ ] All Roomba sensors exposed through Viam
+- [ ] Module has unit tests
+- [ ] Documentation complete
+
+**Phase 2 Complete When:**
+- [ ] Hardware fragment created and versioned
+- [ ] Second Roomba deployed using fragment
+
+**Full Project Complete When:**
+- [ ] Fleet of 2+ Roombas managed together
+- [ ] Custom web or mobile control interface
+- [ ] Triggers and automation configured
+- [ ] Data capture and analysis pipeline working
 
 ---
 
 ## Documentation Deliverables
 
+### For Users
 - [ ] README with setup instructions
 - [ ] Wiring diagram (Pi to Roomba)
+- [ ] Configuration examples
+
+### For Developers
 - [ ] Roomba Open Interface command reference
-- [ ] Beacon build guide with schematics
 - [ ] Module development tutorial
-- [ ] SLAM upgrade guide
+- [ ] Testing guide
+
+### For Hardware Builders
+- [ ] Wiring guide (Pi to Roomba serial)
+- [ ] Parts list with purchase links
+
+### For Viam Learners
+- [ ] "What I Learned" blog post per phase
+- [ ] Comparison: Viam vs. ROS for this project
+- [ ] Tips for module development
 
 ---
 
@@ -172,7 +415,7 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Technical Details
+## Technical Reference
 
 ### Roomba Open Interface
 
@@ -180,7 +423,7 @@ Select 3-5 items for post-hackathon development:
 - Mini-DIN connector on Roomba
 - TXD, RXD, GND, battery power
 - 5V logic (needs level shifter for 3.3V Pi)
-- Default baud: 115200 (500/600 series)
+- Default baud: 115200 (Roomba 650/655)
 
 **Key commands:**
 
@@ -207,99 +450,22 @@ Select 3-5 items for post-hackathon development:
 
 ```
 roomba-legacy/
-├── main.go
-├── roomba_base.go      # Implements base.Base
-├── roomba_sensor.go    # Implements sensor.Sensor
-├── roomba_power.go     # Implements powersensor.PowerSensor
-├── protocol.go         # OI protocol implementation
-└── meta.json
+├── main.go              # Entry point, resource registration
+├── roomba_base.go       # Implements base.Base
+├── roomba_sensor.go     # Implements sensor.Sensor (bump)
+├── roomba_power.go      # Implements powersensor.PowerSensor
+├── roomba_movement.go   # Implements movementsensor.MovementSensor
+├── protocol.go          # OI protocol implementation
+├── protocol_test.go     # Protocol unit tests
+├── meta.json            # Module metadata
+└── README.md            # Documentation
 ```
 
-**Base implementation sketch:**
-
-```go
-type RoombaBase struct {
-    resource.Named
-    port   io.ReadWriteCloser
-    logger logging.Logger
-    mu     sync.Mutex
-}
-
-func (r *RoombaBase) SetVelocity(ctx context.Context,
-    linear, angular r3.Vector, extra map[string]interface{}) error {
-
-    r.mu.Lock()
-    defer r.mu.Unlock()
-
-    // Convert to Roomba drive command
-    velocity := int16(linear.Y * 500)  // mm/s, max 500
-    radius := calculateRadius(angular.Z)
-
-    cmd := []byte{
-        137,  // DRIVE opcode
-        byte(velocity >> 8), byte(velocity & 0xFF),
-        byte(radius >> 8), byte(radius & 0xFF),
-    }
-
-    _, err := r.port.Write(cmd)
-    return err
-}
-
-func (r *RoombaBase) Stop(ctx context.Context, extra map[string]interface{}) error {
-    return r.SetVelocity(ctx, r3.Vector{}, r3.Vector{}, nil)
-}
-```
-
-### DIY IR Beacon Protocol
-
-**Virtual Wall (code 162):**
-- 38kHz carrier
-- Each bit: 1ms pulse for 1, 3ms pulse for 0
-- Send byte 3 times with 100ms gaps
-- 150ms pause after sequence
-
-**Dock beacon signals:**
-
-| Signal | Code | Purpose |
-|--------|------|---------|
-| Red Buoy | 168 | Right side of dock |
-| Green Buoy | 164 | Left side of dock |
-| Force Field | 161 | Center approach |
-| Red+Green | 172 | Combined (close) |
-| Red+Force | 169 | Right + center |
-| Green+Force | 165 | Left + center |
-| All | 173 | Very close to dock |
-
-**Arduino beacon sketch:**
-
-```cpp
-#define IR_PIN 3
-#define CARRIER_FREQ 38000
-
-void sendRoombaCode(uint8_t code) {
-    for (int rep = 0; rep < 3; rep++) {
-        for (int bit = 7; bit >= 0; bit--) {
-            int duration = (code & (1 << bit)) ? 1 : 3;
-            tone(IR_PIN, CARRIER_FREQ);
-            delay(duration);
-            noTone(IR_PIN);
-            delay(duration);
-        }
-        delay(100);
-    }
-    delay(150);
-}
-
-void loop() {
-    sendRoombaCode(162);  // Virtual Wall
-}
-```
-
-### Cost Comparison
+## Cost Comparison
 
 | Platform | Cost | Driver Work | Learning Depth |
 |----------|------|-------------|----------------|
-| Retro Roomba | ~$150 | Build from scratch | Very High |
+| Roomba 650/655 | ~$150 | Build from scratch | Very High |
 | Create 3 | $299 | Configure ROS 2 bridge | Medium |
 | TurtleBot 4 | $1,850 | Configure existing | Low |
 
@@ -307,28 +473,21 @@ void loop() {
 
 ## Notes
 
-**Gap Features This Project Addresses:**
-- **Custom Module Development** - Primary demo of building a driver from scratch
-- **Hardware Abstraction** - Implement base, sensor, power_sensor APIs
-- **Protocol Implementation** - Serial protocol, IR beacon protocol
-
 **Why this project is valuable:**
 - Cheapest mobile base option ($30-50)
 - Forces deep understanding of Viam abstractions
-- IR beacon system teaches signal protocols
-- Can be upgraded incrementally (camera, LiDAR)
+- No computer vision required - focuses on fundamentals
 - Creates reusable module for community
+- Covers core Viam capabilities without complex dependencies
 
 **Skills developed:**
-- Serial communication
-- Protocol implementation
-- Viam module development
-- Hardware interfacing (voltage levels)
-- IR signal encoding
-- SLAM integration (with upgrade)
+- Serial communication & binary protocols
+- Viam module development (Go)
+- Multiple component API implementation
+- SDK usage (Python, Go, TypeScript)
+- Data capture and analysis
+- Fleet management
 
 **References:**
-- [Roomba SCI Specification (PDF)](https://cdn.hackaday.io/files/1747287475562752/Roomba_SCI_manual.pdf)
-- [Hacking a Broken Roomba](https://www.royvanrijn.com/blog/2015/12/hacking-a-broken-roomba/)
-- [DIY Virtual Wall - GitHub](https://github.com/MKme/Roomba)
-- [pi-rc522 RFID Library](https://github.com/ondryaso/pi-rc522)
+- [Roomba Open Interface Specification](https://edu.irobot.com/what-we-offer/create3-resources)
+- [iRobot Create 2 OI Spec (similar protocol)](https://www.irobot.com/about-irobot/stem/create-2)

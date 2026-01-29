@@ -88,7 +88,6 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 | Vino 1 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
 | Vino 2 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
 | Vino 3 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
-| Vino 4 | xArm 6 (2) | xArm Gripper G2 (2) | Meerkat (1) | D435 wrist (2), webcam glass (1) | — |
 | Chess 1 | xArm 7 (1) | xArm Gripper G2 (1) | Meerkat (1) | D435 wrist (1) | Board (1), pieces (1) |
 | Chess 2 | xArm 7 (1) | xArm Gripper G2 (1) | Meerkat (1) | D435 wrist (1) | Board (1), pieces (1) |
 | Salad 1 | UFACTORY 850 (2) | xArm Gripper G2 + tongs (2) | Meerkat (1) | D435 wrist (2), webcam overview (1) | Prep station (1), dispenser (1) |
@@ -121,18 +120,18 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 | Component | Need | In Stock | To Order |
 |-----------|------|----------|----------|
 | **Arms** | | | |
-| xArm 6 | 8 | 10 | 0 ✓ (surplus 2) |
+| xArm 6 | 6 | 10 | 0 ✓ (surplus 4) |
 | xArm 7 | 2 | 1 | **1** |
 | UFACTORY 850 | 6 | 0 | **6** |
 | **Grippers** | | | |
-| xArm Gripper G2 | 16 | 7 | **9** |
+| xArm Gripper G2 | 14 | 7 | **7** |
 | Tongs extension | 4 | 0 | **4** |
 | **Compute** | | | |
-| System76 Meerkat | 10 | 4 | **6** |
+| System76 Meerkat | 9 | 4 | **5** |
 | Raspberry Pi 5 | 12 | TBD | TBD |
 | **Cameras** | | | |
-| Intel RealSense D435 | 16 | 7 | **9** |
-| Webcam | 16 | 3 | **13** |
+| Intel RealSense D435 | 14 | 7 | **7** |
+| Webcam | 15 | 3 | **12** |
 | **Bases** | | | |
 | Roomba 500/600 | 2 | TBD | TBD |
 | **Barista Equipment** | | | |
@@ -184,13 +183,13 @@ During the hackathon kickoff, engineers will select which project to join. Consi
 
 **Requirement:** Every engineer must join a project team.
 
-## Team Sizes (50 Engineers)
+## Team Sizes
 
-Current build configuration for 50 engineers:
+Current build configuration:
 
 | Project | Builds | Team Size | Total Engineers |
 |---------|--------|-----------|-----------------|
-| Vino | 4 | 5 | 20 |
+| Vino | 3 | 5 | 15 |
 | Chess | 2 | 5 | 10 |
 | Salad Maker | 2 | 5 | 10 |
 | Barista | 2 | 5 | 10 |
@@ -198,6 +197,7 @@ Current build configuration for 50 engineers:
 | Inventory Tracker | 1 | 5 | 5 |
 | Smart Lighting | 1 | 5 | 5 |
 | Retro Roomba | 2 | 5 | 10 |
+| **Total** | **14** | | **70** |
 
 **Note:** Adjust based on interest and hardware availability.
 
