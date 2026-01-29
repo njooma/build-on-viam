@@ -30,7 +30,7 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 ### Scale & Fleet Capabilities
 - [ ] **Fleet Management** — Stretch: multiple prep stations
 - [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
+- [ ] **Provisioning** — Stretch: multiple prep stations
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Order received, bowl ready, low ingredient alerts

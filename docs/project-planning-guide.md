@@ -68,7 +68,7 @@ As of the current project portfolio, here's how capabilities are covered:
 | Fragments | All projects |
 | Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | OTA Updates | All projects |
-| Provisioning | All projects |
+| Provisioning | Greenhouse, Barista, Inventory Tracker, Smart Lighting, Cleaning Cart |
 | Event-Driven Automation | All projects |
 | Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | Monitoring & Alerting | Vino, Greenhouse, Barista |

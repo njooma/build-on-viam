@@ -28,7 +28,7 @@ Extended functionality includes restocking kitchen supplies by unpacking boxes a
 ### Scale & Fleet Capabilities
 - [ ] **Fleet Management** — Stretch: multi-station deployment
 - [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
+- [ ] **Provisioning** — Stretch: multi-station deployment
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Box detection, jam alerts, bin full notifications

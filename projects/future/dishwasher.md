@@ -28,7 +28,7 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 ### Scale & Fleet Capabilities
 - [ ] **Fleet Management** — Not applicable (single station)
 - [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
+- [ ] **Provisioning** — Not applicable (single station)
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Dishwasher cycle complete detection, drop detection

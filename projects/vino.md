@@ -28,7 +28,7 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 ### Scale & Fleet Capabilities
 - [ ] **Fleet Management** — Stretch: multi-station deployment
 - [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
+- [ ] **Provisioning** — Stretch: multi-station deployment
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Glass placement, bottle empty, order received

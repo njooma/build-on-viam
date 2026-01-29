@@ -28,7 +28,7 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 ### Scale & Fleet Capabilities
 - [ ] **Fleet Management** — Stretch: multiple Roombas
 - [x] **OTA Updates** — Publish and version driver via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
+- [ ] **Provisioning** — Stretch: multiple Roombas
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Low battery, dock needed, bump detected

@@ -30,7 +30,7 @@ This project demonstrates vision-based detection, precise manipulation, game eng
 ### Scale & Fleet Capabilities
 - [ ] **Fleet Management** — Not applicable (single board)
 - [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
+- [ ] **Provisioning** — Not applicable (single board)
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Human move detection, game end detection
