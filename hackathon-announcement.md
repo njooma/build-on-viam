@@ -46,6 +46,8 @@ The build team and I will assemble the hardware and configure Viam machines befo
 
 From Emily: Knowing the Viam platform is a core expectation of performance at Viam. As part of our performance expectations, every engineer is to actively use, explore, and deepen their understanding of the platform. The upcoming hackathon will kick-start this focus, but ongoing hands-on usage and continuous learning are required, not optional, to be effective in our roles and to execute well as a company. These expectations will be formally reflected in the engineering career ladder in the coming weeks.
 
+See the [FAQ](https://github.com/shannonbradshaw/build-on-viam/blob/main/projects/FAQ.md) for answers to common questions. Slack me with anything else.
+
 Looking forward to building together!
 
 Shannon
