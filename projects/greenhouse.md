@@ -31,7 +31,6 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 - [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Threshold-based: humidity, temperature, soil moisture, light
 - [x] **Scheduled Tasks** — Periodic readings, daily reports, time-lapse capture
 - [x] **Monitoring & Alerting** — Environmental alerts, fleet health dashboard
 - [x] **Data Pipeline (ML Training)** — Growth images → labeling → ripeness model → deploy

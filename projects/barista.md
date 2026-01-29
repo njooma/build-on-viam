@@ -33,7 +33,6 @@ This project combines manipulation complexity (multi-step beverage preparation),
 - [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Order received, brew complete, low beans alert
 - [x] **Scheduled Tasks** — Morning warmup, cleaning cycles, inventory check
 - [x] **Monitoring & Alerting** — Bean level, water, temperature, usage metrics
 - [x] **Data Pipeline (ML Training)** — Drink quality images, shot timing for grind tuning

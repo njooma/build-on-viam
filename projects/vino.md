@@ -31,7 +31,6 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 - [ ] **Provisioning** — Stretch: multi-station deployment
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Glass placement, bottle empty, order received
 - [x] **Scheduled Tasks** — Cleaning cycles
 - [ ] **Monitoring & Alerting** — Backlog: bottle levels, temperature
 - [ ] **Data Pipeline (ML Training)** — Not primary focus

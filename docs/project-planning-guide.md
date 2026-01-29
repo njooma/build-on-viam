@@ -39,7 +39,6 @@ These are the capabilities we want to demonstrate across our project portfolio:
 
 | Capability | Description |
 |------------|-------------|
-| **Event-Driven Automation** | Event-driven automation (sensor thresholds, detections) |
 | **Scheduled Tasks** | Periodic operations without custom schedulers |
 | **Monitoring & Alerting** | Fleet health visibility and notifications |
 | **Data Pipeline (ML Training)** | Capture → Label → Train → Deploy workflow |
@@ -69,7 +68,6 @@ As of the current project portfolio, here's how capabilities are covered:
 | Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | OTA Updates | All projects |
 | Provisioning | Greenhouse, Barista, Inventory Tracker, Smart Lighting, Cleaning Cart |
-| Event-Driven Automation | All projects |
 | Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | Monitoring & Alerting | Vino, Greenhouse, Barista |
 | Data Pipeline (ML Training) | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker |
@@ -83,7 +81,7 @@ When proposing a new project, consider:
 
 ### 1. Feature Coverage
 
-- Does this project demonstrate capabilities not well-covered elsewhere?
+- Does this project demonstrate a broad set of Viam capabilities?
 - Which "gap features" could this project address?
 - Would this be the PRIMARY demo for any capability?
 

@@ -31,7 +31,6 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 - [ ] **Provisioning** — Not applicable (single station)
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Dishwasher cycle complete detection, drop detection
 - [ ] **Scheduled Tasks** — Backlog: scheduled unload times
 - [ ] **Monitoring & Alerting** — Backlog: error logging, inventory alerts
 - [x] **Data Pipeline (ML Training)** — Dish image capture for classifier training

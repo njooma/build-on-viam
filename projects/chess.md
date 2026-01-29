@@ -33,7 +33,6 @@ This project demonstrates vision-based detection, precise manipulation, game eng
 - [ ] **Provisioning** — Not applicable (single board)
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Human move detection, game end detection
 - [ ] **Scheduled Tasks** — Not applicable
 - [ ] **Monitoring & Alerting** — Not applicable
 - [ ] **Data Pipeline (ML Training)** — Backlog: capture → label → train → deploy for piece recognition

@@ -33,7 +33,6 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 - [ ] **Provisioning** — Stretch: multiple prep stations
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Order received, bowl ready, low ingredient alerts
 - [x] **Scheduled Tasks** — Morning prep check, cleaning cycles, inventory checks
 - [ ] **Monitoring & Alerting** — Backlog: ingredient levels, temperature
 - [x] **Data Pipeline (ML Training)** — Portion images for grab consistency training

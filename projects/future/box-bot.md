@@ -31,7 +31,6 @@ Extended functionality includes restocking kitchen supplies by unpacking boxes a
 - [ ] **Provisioning** — Stretch: multi-station deployment
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Box detection, jam alerts, bin full notifications
 - [ ] **Scheduled Tasks** — Backlog: off-hours operation for noise reduction
 - [ ] **Monitoring & Alerting** — Backlog: metrics dashboard, maintenance alerts
 - [x] **Data Pipeline (ML Training)** — Box image capture for classifier training

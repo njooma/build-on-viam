@@ -37,7 +37,6 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 - [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Checkout detection, overdue alerts, escalating notifications
 - [x] **Scheduled Tasks** — Daily summaries, weekly utilization reports
 - [ ] **Monitoring & Alerting** — Backlog: station health, low activity alerts
 - [x] **Data Pipeline (ML Training)** — Primary: captured images → labeling → item/face models → deploy

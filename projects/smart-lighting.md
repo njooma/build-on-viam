@@ -31,7 +31,6 @@ This project demonstrates event-driven automation, scheduled tasks, IoT integrat
 - [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Primary: occupancy, daylight thresholds, after-hours behavior
 - [x] **Scheduled Tasks** — Primary: time-based scenes, daylight harvesting loop
 - [ ] **Monitoring & Alerting** — Backlog: zone status dashboard
 - [ ] **Data Pipeline (ML Training)** — Not applicable

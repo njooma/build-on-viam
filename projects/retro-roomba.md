@@ -31,7 +31,6 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 - [ ] **Provisioning** — Stretch: multiple Roombas
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Low battery, dock needed, bump detected
 - [ ] **Scheduled Tasks** — Stretch: scheduled patrol times
 - [ ] **Monitoring & Alerting** — Backlog: battery degradation alerts
 - [ ] **Data Pipeline (ML Training)** — Not applicable

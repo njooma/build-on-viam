@@ -31,7 +31,6 @@ This project demonstrates navigation, SLAM, vision detection, and multi-robot co
 - [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
-- [x] **Event-Driven Automation** — Motion-based pause, low battery return, tray full alert
 - [x] **Scheduled Tasks** — Primary: multiple daily patrols (morning, post-lunch, end-of-day)
 - [ ] **Monitoring & Alerting** — Backlog: patrol status dashboard
 - [ ] **Data Pipeline (ML Training)** — Backlog: detection improvement
