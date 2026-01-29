@@ -18,18 +18,29 @@ This project demonstrates vision-based detection, precise manipulation, game eng
 
 ## Viam Capabilities Demonstrated
 
-- [x] Motion / Arm Control
-- [x] Gripper Manipulation
-- [x] Vision (classical CV — Hough transform, point cloud processing)
-- [ ] ML (piece type recognition is a backlog item)
-- [x] Data Management (game state persistence)
-- [ ] Fleet Management
-- [x] Remote Operation
-- [x] Modular Resources (chess service, piece-finder vision service)
-- [ ] Multi-machine Coordination
-- [x] Cloud Integration
-- [ ] Data Pipeline 
-- [x] Event-Driven Automation
+### Core Capabilities
+- [x] **Hardware Integration** — Camera, arm, gripper with consistent APIs
+- [x] **Motion Planning** — Motion service, frame system, inverse kinematics
+- [x] **Vision / ML Inference** — Classical CV (Hough transform, point cloud); ML is backlog
+- [ ] **Data Capture & Sync** — Not primary focus (game state saved locally)
+- [x] **Remote Operation** — Can play against robot remotely via video feed
+- [x] **Module Development** — Chess service, piece-finder vision service via Registry
+
+### Scale & Fleet Capabilities
+- [x] **Fragments** — Hardware configuration as reusable fragment
+- [ ] **Fleet Management** — Not applicable (single board)
+- [ ] **OTA Updates** — Not a focus
+- [ ] **Provisioning** — Not a focus
+
+### Operational Capabilities
+- [x] **Event-Driven Automation** — Human move detection, game end detection
+- [ ] **Scheduled Tasks** — Not applicable
+- [ ] **Monitoring & Alerting** — Not applicable
+- [ ] **Data Pipeline (ML Training)** — Backlog: capture → label → train → deploy for piece recognition
+
+### Customer-Facing Capabilities
+- [ ] **Customer Delivery** — Not applicable
+- [ ] **Web/Mobile Apps** — Backlog: mode selection, chess clock (Option D)
 
 ## Hardware Requirements
 
