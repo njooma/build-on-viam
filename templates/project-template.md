@@ -2,7 +2,7 @@
 
 ## Overview
 
-**One-line description:** [Brief description of what this application does]
+**One-line description:** [Brief description of what this robot/system does]
 
 **Project Lead:** TBD
 **Team Members:** TBD
@@ -10,43 +10,46 @@
 
 ## Description
 
-[2-3 paragraphs describing the application, its purpose, and why it's a good demonstration of Viam's capabilities. Include:]
+[2-3 paragraphs describing the project, its purpose, and why it's a good demonstration of Viam's capabilities. Include:]
 
-- What does this robot do?
+- What does this robot/system do?
 - Why is it compelling (demo appeal, utility, learning value)?
-- What makes it a good fit for the Build on Viam program?
+- What Viam capabilities does it showcase?
 
 ## Viam Capabilities Demonstrated
 
-Check all that apply. **Bold** the capabilities this project will be the primary demonstration of.
+### Core Capabilities
+- [ ] **Hardware Integration** — [Describe hardware: cameras, arms, sensors, etc.]
+- [ ] **Motion Planning** — [Describe if applicable, or "Not applicable"]
+- [ ] **Vision / ML Inference** — [Describe vision/ML usage, or "Not applicable"]
+- [ ] **Data Capture & Sync** — [Describe data capture needs, or "Not primary focus"]
+- [ ] **Remote Operation** — [Describe remote operation capabilities]
+- [ ] **Module Development** — [Describe custom modules, or "Not primary focus"]
+- [ ] **Fragments** — [Describe fragment usage for configuration reuse]
 
-- [ ] Motion / Arm Control
-- [ ] Gripper Manipulation
-- [ ] Vision / ML (object detection, classification, custom models)
-- [ ] Navigation / SLAM
-- [ ] Data Management (capture, sync, cloud storage)
-- [ ] Fleet Management (multiple machines, shared configs)
-- [ ] Remote Operation (control through firewalls)
-- [ ] Modular Resources (custom components/services via Registry)
-- [ ] Multi-machine Coordination
-- [ ] Cloud Integration
-- [ ] Triggers (event-driven automation)
-- [ ] Scheduled Tasks (periodic operations)
-- [ ] Data Pipeline (capture → label → train → deploy)
-- [ ] Customer Delivery (guest-facing interfaces, SDKs)
-- [ ] Monitoring & Alerting (dashboards, notifications)
+### Scale & Fleet Capabilities
+- [ ] **Fleet Management** — [Describe if managing multiple machines, or "Not applicable"]
+- [ ] **OTA Updates** — [Module and configuration updates via Registry]
+- [ ] **Provisioning** — [Fragment-based configuration reuse, or "Not applicable" if not fleet-oriented]
+
+### Operational Capabilities
+- [ ] **Scheduled Tasks** — [Describe scheduled operations, or "Not applicable"]
+- [ ] **Monitoring & Alerting** — [Describe monitoring needs, or "Not applicable"]
+- [ ] **Data Pipeline (ML Training)** — [Describe capture → label → train → deploy workflow, or "Not applicable"]
+
+### Customer-Facing Capabilities
+- [ ] **Customer Delivery** — [Describe guest/customer-facing features, or "Not applicable"]
+- [ ] **Web/Mobile Apps** — [Describe app interfaces, or "Not applicable"]
 
 ## Hardware Requirements
 
 | Component | Description | Options |
 |-----------|-------------|---------|
-| [e.g., Arm] | [6-DOF robot arm] | [xArm 6, UFactory Lite 6] |
-| [e.g., Camera] | [Vision input] | [USB camera, Intel RealSense] |
-| [e.g., Compute] | [Main controller] | [Raspberry Pi 4, Jetson Nano] |
+| [e.g., Arm] | [Purpose] | [Specific models] |
+| [e.g., Camera] | [Purpose] | [Specific models] |
+| [e.g., Compute] | [Main controller] | [Raspberry Pi 5, etc.] |
 
-**Estimated Hardware Cost:** $[amount]
-
-**Remote-Friendly:** [Yes/Partially/No] - [explain what can be developed remotely]
+**Remote-Friendly:** [Yes/Partially/No] - [Explain what can be developed remotely]
 
 ---
 
@@ -56,21 +59,21 @@ Select one for hackathon scope:
 
 ### Option A: [Name] (Recommended)
 [Brief description of minimal viable demo]
+- **Scope:** [What's included]
 - **Complexity:** [Low/Medium/High]
 - **Demo Appeal:** [Medium/High/Very High]
-- **Scope:** [What's included]
 
 ### Option B: [Name]
 [Brief description]
+- **Scope:** [What's included]
 - **Complexity:** [Low/Medium/High]
 - **Demo Appeal:** [Medium/High/Very High]
-- **Scope:** [What's included]
 
 ### Option C: [Name]
 [Brief description]
+- **Scope:** [What's included]
 - **Complexity:** [Low/Medium/High]
 - **Demo Appeal:** [Medium/High/Very High]
-- **Scope:** [What's included]
 
 **Selected MVP:** _______________
 
@@ -78,24 +81,18 @@ Select one for hackathon scope:
 
 ## Backlog
 
-Select 3-5 items for post-hackathon development:
-
-### Core Functionality
+### [Category 1, e.g., Core Functionality]
 - [ ] [Feature 1]
 - [ ] [Feature 2]
 - [ ] [Feature 3]
 
-### [Gap Feature Category, e.g., Triggers]
-- [ ] [Trigger implementation 1]
-- [ ] [Trigger implementation 2]
+### [Category 2, e.g., Data & Analytics]
+- [ ] [Feature 1]
+- [ ] [Feature 2]
 
-### [Gap Feature Category, e.g., Data Pipeline]
-- [ ] [Data pipeline feature 1]
-- [ ] [Data pipeline feature 2]
-
-### [Additional Category]
-- [ ] [Feature]
-- [ ] [Feature]
+### [Category 3]
+- [ ] [Feature 1]
+- [ ] [Feature 2]
 
 ---
 
@@ -126,7 +123,6 @@ Select 3-5 items for post-hackathon development:
 - [ ] README with setup instructions
 - [ ] Hardware assembly guide
 - [ ] Configuration guide
-- [ ] Troubleshooting guide
 - [ ] [Project-specific documentation]
 
 ---
@@ -140,22 +136,20 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
+## Technical Details
+
+[Include any technical details that help understand the implementation approach, architecture diagrams, protocol specifications, etc.]
+
+---
+
 ## Notes
 
-[Additional context, considerations, risk factors, or explanations that help evaluators understand the proposal]
+[Additional context, considerations, or explanations that help evaluators understand the proposal]
 
 **Why this project is compelling:**
-1. [Reason 1]
-2. [Reason 2]
-3. [Reason 3]
-
-**Gap Features This Project Addresses:**
-- [List which gap features this project naturally demonstrates and why they fit]
+- [Reason 1]
+- [Reason 2]
 
 **Risk Factors:**
 - [Potential challenge 1]
 - [Potential challenge 2]
-
-**Recommended Approach:**
-1. [Suggested implementation step 1]
-2. [Suggested implementation step 2]
