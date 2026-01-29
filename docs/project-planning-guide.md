@@ -100,10 +100,10 @@ When proposing a new project, consider:
 - Does this project exercise multiple lifecycle stages?
 - Prototype → Deploy → Scale → Fleet → Maintain
 
-### 5. Maintenance
+### 5. Longevity
 
+- Is there a well-defined backlog of work that will extend beyond the hackathon?
 - Can this project be maintained long-term?
-- Is the hardware reliable?
 - Will someone own it after the hackathon?
 
-If you have a project you'd like to propose, write it up following the template used by the projects already defined and submit as a pull request.
+If you have a project you'd like to propose, write it up following the template used by the projects already defined and submit as a pull request to this repo.
