@@ -22,7 +22,7 @@ Review the projects in this directory and indicate your interest by February 13.
 
 **Can I propose my own project?**
 
-Yes! We welcome additional project proposals. See the [project template](./project-template.md) and submit a pull request by February 6.
+Yes! Submit a pull request adding a new `.md` file to the [projects directory](https://github.com/shannonbradshaw/build-on-viam/tree/main/projects) following the [project template](./project-template.md). Deadline is February 6.
 
 **What if a lot of people want to work on the same project?**
 

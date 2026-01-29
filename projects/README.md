@@ -112,4 +112,4 @@ When proposing a new project, consider:
 - Can this project be maintained long-term?
 - Will someone own it after the hackathon?
 
-If you have a project you'd like to propose, write it up following the template used by the projects already defined and submit as a pull request to this repo.
+To propose a new project, submit a pull request adding a new `.md` file to this directory following the [project template](./project-template.md).

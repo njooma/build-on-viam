@@ -38,7 +38,7 @@ Remote employees can participate virtually. The **Greenhouse** and **Retro Roomb
 Browse the current projects here:
 https://github.com/shannonbradshaw/build-on-viam/tree/main/projects
 
-If you want to submit a new project proposal, see the guidelines and instructions linked at the bottom of that page.
+To propose a new project, submit a pull request with a new project description file following the [project template](https://github.com/shannonbradshaw/build-on-viam/blob/main/projects/project-template.md). See the guidelines at the bottom of the projects page.
 
 The build team and I will assemble the hardware and configure Viam machines before the hackathon — you won't need to build hardware from scratch. For the projects where there is lots of interest, we'll create multiple builds and establish multiple teams.
 
