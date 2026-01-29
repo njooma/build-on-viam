@@ -6,8 +6,6 @@ Build on Viam is an internal program where Viam engineers build real robotics pr
 
 Projects range from robot arms that play chess and pour wine to automated greenhouses and smart lighting systems. Each project is designed to exercise specific Viam capabilities while being compelling enough to impress visitors and useful enough to solve real problems.
 
-## Goals
-
 Build on Viam projects should collectively:
 
 1. **Demonstrate all major Viam capabilities** - Every significant platform feature should be showcased by at least one project

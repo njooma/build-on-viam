@@ -1,16 +1,7 @@
 # Build on Viam
 
 **Get every Viam engineer building on Viam**
-
-## Executive Summary
-
-| | |
-|---|---|
-| **Exec Sponsor** | Shannon (Avery is a key collaborator) |
-| **Time Allocation** | 12% (Shannon, and portions of Kristina, Emily, and Avery's time + all engineers) |
-
----
-
+ 
 ## Program Goals
 
 ### 1. Team Enablement
@@ -59,10 +50,9 @@ Improve platform quality through direct, hands-on experience building real appli
 
 ### 2. Hackathon Kickoff
 
-- **Date:** Mid-February (kickoff Feb 10)
+- **Date:** February 2026
 - **Duration:** 3-day hackathon
 - **Culmination:** Demos and awards
-- **Key collaborators:** Kristina and Emily
 
 ### 3. Ongoing Ownership & Accountability
 
