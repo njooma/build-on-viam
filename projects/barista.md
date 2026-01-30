@@ -47,9 +47,9 @@ This project combines manipulation complexity (multi-step beverage preparation),
 |-----------|-------------|----------------|
 | Arm | 6-DOF robot arm | UFACTORY 850 (850mm reach, 5kg payload) |
 | Gripper | Portafilter/pitcher handling | UFACTORY Gripper |
-| Auto-tamper | Consistent 30lb tamp pressure | Puqpress Q2 |
-| Espresso Machine | Semi-automatic, physical buttons | Gaggia Classic Pro |
-| Grinder | Portafilter-activated | Eureka Atom |
+| Auto-tamper | Consistent 30lb tamp pressure | PUQpress Gen 5 Q2 |
+| Espresso Machine | Semi-automatic, rocker switches | Gaggia RI9380/46 E24 |
+| Grinder | Portafilter-activated, 60mm flat burrs | Eureka Atom |
 | Wrist Camera | Close-up detection | Intel RealSense D405 |
 | Overview Camera | Workspace monitoring | USB webcam |
 | Tablet | Order interface | Android tablet |
@@ -242,18 +242,11 @@ Both the Eureka Atom grinder and Puqpress Q2 are sensor-activated:
 - **Grinder:** Portafilter fork switch triggers grinding when pressed
 - **Tamper:** Sensor detects portafilter placement, auto-tamps in 1.3 sec
 
-The only button the robot needs to press is the **Gaggia Classic Pro brew rocker switch**. The rocker switch design is easier for a robot arm to actuate than push buttons.
+The only button the robot needs to press is the **Gaggia E24 brew rocker switch**. The rocker switch design is easier for a robot arm to actuate than push buttons.
 
-### Espresso Machine Options
+### Espresso Machine
 
-| Machine | Pros | Cons |
-|---------|------|------|
-| Gaggia Classic Pro | Rocker switches (easy for robot), 58mm portafilter, Pi mods available | No PID (can add aftermarket) |
-| Rancilio Silvia | Professional build, toggle switches | No PID built-in |
-| Rancilio Silvia Pro X | PID built-in, reliable | More complex |
-| Breville Bambino Plus | Compact, PID | 54mm portafilter (non-standard) |
-
-**Recommendation:** Gaggia Classic Pro - rocker switches are easy for robot to press, 58mm commercial portafilter, well-documented mods.
+**Selected:** Gaggia RI9380/46 E24 - rocker switches are easy for robot to press, 58mm commercial portafilter, well-documented Pi mods available.
 
 ### References
 
