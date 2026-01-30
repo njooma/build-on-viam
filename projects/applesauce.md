@@ -36,7 +36,7 @@ This project combines manipulation complexity (multi-step processing workflow), 
 ### Operational Capabilities
 - [x] **Scheduled Tasks** — Batch processing runs, cleaning cycles
 - [x] **Monitoring & Alerting** — Throughput tracking, error detection, bin full alerts
-- [ ] **Data Pipeline (ML Training)** — Apple images for detection model improvement
+- [x] **Data Pipeline (ML Training)** — Apple images for detection model improvement
 
 ## Hardware Requirements
 
