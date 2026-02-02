@@ -42,7 +42,7 @@ Internal reference for Build on Viam hardware procurement.
 
 ## Smart Lighting Project
 
-**Total Estimated Cost: $750-800**
+**Total Estimated Cost: $760-810** *(includes daylight harvesting sensor)*
 
 ### Hub & Bridge
 | Item | Qty | Est. Price | Link |
@@ -68,6 +68,12 @@ Internal reference for Build on Viam hardware procurement.
 | Item | Qty | Est. Price | Link |
 |------|-----|------------|------|
 | Ethernet Cable (Cat6, 5ft) | 2 | $10 | [Amazon](https://www.amazon.com/Amazon-Basics-Ethernet-Gold-Plated-Connectors/dp/B00N2VILDM) |
+
+### Daylight Harvesting
+| Item | Qty | Est. Price | Link |
+|------|-----|------------|------|
+| BH1750 Light Sensor (I2C) | 1 | $6 | [Amazon](https://www.amazon.com/HiLetgo-BH1750FVI-Digital-Intensity-Arduino/dp/B01DLG4NZC) |
+| Jumper Wires (F-F, 40-pack) | 1 | $6 | [Amazon](https://www.amazon.com/EDGELEC-Breadboard-Optional-Assorted-Multicolored/dp/B07GD2BWPY) |
 
 ---
 
