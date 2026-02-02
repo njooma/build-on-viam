@@ -59,10 +59,11 @@ Internal reference for Build on Viam hardware procurement.
 | Lutron Pico Remote | 2 | $50 | [Amazon](https://www.amazon.com/Lutron-3-Button-Wireless-Lighting-PJ2-3BRL-WH-L01R/dp/B00KLAXFQ0) |
 | Lutron Caseta Lamp Dimmer | 2 | $70 | [Amazon](https://www.amazon.com/Lutron-Wireless-Lighting-PD-3PCL-WH-Assistant/dp/B00KHSXB60) |
 
-### Motion Sensors
+### Motion Sensors (choose one)
 | Item | Qty | Est. Price | Link |
 |------|-----|------------|------|
 | Lutron Caseta Motion Sensor | 3 | $90 | [Amazon](https://www.amazon.com/Lutron-Caseta-Occupancy-Vacancy-PD-OSENS-WH/dp/B084CMPWST) |
+| *OR* HC-SR501 PIR Sensor (3-pack) | 1 | $6 | [Amazon](https://www.amazon.com/DIYmall-HC-SR501-Motion-Infrared-Arduino/dp/B012ZZ4LPM) |
 
 ### Network
 | Item | Qty | Est. Price | Link |
