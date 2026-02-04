@@ -77,14 +77,9 @@ Following behavior with basic gesture recognition for commands
 
 ## Backlog
 
-### Core Functionality
-- [ ] Implement person detection pipeline with YOLOv8
-- [ ] Integrate Unitree SDK with Viam movement-sensor component
-Base and camera are implemented already
+### Tracking Service
 - [ ] Develop following behavior state machine (searching, tracking, following, stopped)
 - [ ] Implement distance estimation and velocity control
-- [ ] Add basic obstacle avoidance using front sensors
-- [ ] Create safety boundaries (max speed, min distance)
 
 ### Vision & ML
 - [ ] Collect training data for person re-identification
@@ -92,29 +87,43 @@ Base and camera are implemented already
 - [ ] Implement tracking smoothing
 - [ ] Add multi-person detection with designated target selection
 - [ ] Develop person re-identification for occlusion recovery
+- [ ] Add gesture detection which would allow the dog to heel, spin, roll, stand on hind legs, do a backflip
+- [ ] Implement person detection pipeline with YOLOv8
+- [ ] Natural language command integration ("Heel", "Stay", "Come")
 
 ### User Interface
 - [ ] Build web dashboard with live video feed
 - [ ] Add telemetry visualization (speed, distance, battery)
 - [ ] Implement emergency stop button
-- [ ] Create mobile monitoring app
 - [ ] Add manual override control mode
+- [ ] Change following distance
+- [ ] Speed with which robot moves
+- [ ] Add follow state indicator (SEARCHING / TRACKING / FOLLOWING / LOST)
 
 ### Data & Analytics
 - [ ] Set up automated data capture during operation
 - [ ] Create annotation pipeline for detection refinement
-- [ ] Build behavior analytics dashboard
 - [ ] Implement A/B testing for control parameters
 
----
+### Hardware
 
-## Stretch Goals
+- [ ] Integrate Unitree SDK with Viam movement-sensor component
+- [ ] Integrate Unitree SDK with Viam audio component
+- [ ] Integrate Unitree SDK with Viam pointclouds
 
+### Naivgation
+- [ ] Add basic obstacle avoidance using front sensors
+- [ ] Build a map of the office
+- [ ] Allow robot to navigate from or between april tags
 - [ ] Autonomous return-to-base when battery is low
 - [ ] Social navigation behaviors (navigate through crowds without disturbing people)
 - [ ] Integration with office automation projects (follow person while carrying items)
-- [ ] Implement with other bases(DJI tello EDU)
-- [ ] Natural language command integration ("Heel", "Stay", "Come")
+- [ ] Try to add in jump over small obstacle feature
+
+## Stretch Goals
+- [ ] Research other bases like humanoid or drone
+- [ ] Perform SLAM and monitor base position on map/GUI
+- [ ] Mobile App
 
 ---
 
